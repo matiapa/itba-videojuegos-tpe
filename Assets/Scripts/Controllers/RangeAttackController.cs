@@ -6,7 +6,6 @@ public class RangeAttackController : MonoBehaviour {
 
     [SerializeField] private float _maxRange = 50f;
     [SerializeField] private float _shootingCooldown = 2f;
-    [SerializeField] private float _shootingForce = 10f;
     [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private bool _isEnemy;
 

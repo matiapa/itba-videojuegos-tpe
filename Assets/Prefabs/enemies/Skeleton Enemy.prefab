@@ -129,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3433600713801151140, guid: 2e1d0dab735a65b5a8e1107cf07166ee, type: 3}
       propertyPath: m_Name
-      value: Skeleton Enemy 1
+      value: Skeleton Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1d0dab735a65b5a8e1107cf07166ee, type: 3}
@@ -298,7 +298,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxRange: 20
   _shootingCooldown: 2
-  _shootingForce: 10
   _projectilePrefab: {fileID: 2382930891249438325, guid: e23dd98132a134f308b9829f103dd42d, type: 3}
   _isEnemy: 1
 --- !u!114 &4673388806054492934

@@ -4,10 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class BuildingSystem : MonoBehaviour
 {
-    public GameObject[] turretsPreviews;
-    public GameObject[] turrets;
+    public GameObject[] entitiesPreviews;
+    public GameObject[] entities;
     private int index;
-    private GameObject pendingTurret;
+    private GameObject pendingEntity;
     private RaycastHit hit;
     private Vector3 actualPos;
     private AudioSource _audioSource;
@@ -16,11 +16,13 @@ public class BuildingSystem : MonoBehaviour
 
     static public BuildingSystem instance;
 
-    public int[] TurretsCost => turrets.Select(
-        turretObject => turretObject.GetComponent<Turret>().GetComponent<BuildController>().Cost).ToArray();
+    public int[] EntitiesCost => entities.Select(
+        entity => entity.GetComponent<BuildController>().Cost
+    ).ToArray();
 
     private void Awake() {
-        if (instance != null) Destroy(this);
+        if (instance != null)
+            Destroy(this);
         instance = this;
     }
     private void Start() {
@@ -30,36 +32,37 @@ public class BuildingSystem : MonoBehaviour
 
     private void FixedUpdate() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 1000))
-        {
+        if (Physics.Raycast(ray, out hit, 2000)) {
             IBuildHolder buildHolder = hit.transform.gameObject.GetComponent<IBuildHolder>();
             if (buildHolder != null)
-            {
                 actualPos = hit.transform.gameObject.transform.position;
-            }
             else
-            {
                 actualPos = Vector3.zero + new Vector3(0,-10,0);
-            }
         }
  
     }
 
     private void Update() {
-        if (pendingTurret != null)
-            pendingTurret.transform.position = actualPos;
-
+        if (pendingEntity != null)
+            pendingEntity.transform.position = actualPos;
+            
         if (Input.GetButtonUp("Click"))
             OnMouseUp();
 
-        if (Input.GetButtonUp("Tower 1"))
-            SelectTurret(0);
+        if (Input.GetButtonUp("Basic Tower"))
+            SelectEntity(0);
 
-        if (Input.GetButtonUp("Tower 2"))
-            SelectTurret(1);
+        if (Input.GetButtonUp("Ice Tower"))
+            SelectEntity(1);
 
-        if (Input.GetButtonUp("Tower 3"))
-            SelectTurret(2);
+        if (Input.GetButtonUp("Poison Tower"))
+            SelectEntity(2);
+
+        if (Input.GetButtonUp("Missile Tower"))
+            SelectEntity(3);
+
+        if (Input.GetButtonUp("Bomb"))
+            SelectEntity(4);
     }
 
     private void OnMouseUp() {
@@ -75,23 +78,25 @@ public class BuildingSystem : MonoBehaviour
         if (Vector3.Distance(hit.transform.gameObject.transform.position, actualPos) > distanceThreshold)
             return;
 
-        int cost = turrets[index].gameObject.GetComponent<BuildController>().Cost;
+        int cost = entities[index].gameObject.GetComponent<BuildController>().Cost;
         if (GameManager.instance.Coins - cost >= 0) {
-            Destroy(pendingTurret);
-            CmdBuild cmdBuild = new CmdBuild(buildHolder, turrets[index]);
+            Destroy(pendingEntity);
+            CmdBuild cmdBuild = new CmdBuild(buildHolder, entities[index]);
             CommandQueue.instance.AddEventToQueue(cmdBuild);
-            pendingTurret = null;
+            pendingEntity = null;
         }
         else {
             _audioSource.PlayOneShot(_notEnoughCoinsClip);
         }
     }
 
-    private void SelectTurret(int index) {
+    private void SelectEntity(int index) {
         this.index = index;
-        if(pendingTurret != null)
-            Destroy(pendingTurret);
-        pendingTurret = Instantiate(turretsPreviews[index], actualPos, transform.rotation);
+
+        if(pendingEntity != null)
+            Destroy(pendingEntity);
+
+        pendingEntity = Instantiate(entitiesPreviews[index], actualPos, transform.rotation);
     }
     
 }

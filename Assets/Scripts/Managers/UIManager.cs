@@ -15,7 +15,8 @@ public class UIManager : MonoBehaviour {
         GameManager.instance.OnNetCoinChange += UpdateCoinsValue;
         GameManager.instance.OnNetLivesChange += UpdateLivesValue;
         EventManager.instance.OnWaveChange += UpdateCurrentWave;
-        _turretsCost = BuildingSystem.instance.TurretsCost;
+        
+        _turretsCost = BuildingSystem.instance.EntitiesCost;
         _basicTurretTextMesh.GetComponent<TextMeshProUGUI>().text = $"{_turretsCost[0]}";
         _iceTurretTextMesh.GetComponent<TextMeshProUGUI>().text = $"{_turretsCost[1]}";
         _poisonTurretTextMesh.GetComponent<TextMeshProUGUI>().text = $"{_turretsCost[2]}";
