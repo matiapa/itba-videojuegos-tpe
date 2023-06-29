@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(BasicLifeController))]
 [RequireComponent(typeof(RangeAttackController))]
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour {
 
     [SerializeField] private int _coinsEarnedOnDeath;

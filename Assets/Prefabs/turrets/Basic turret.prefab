@@ -296,8 +296,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxRange: 30
-  _shotCooldown: 1.5
-  _bulletPrefab: {fileID: 2382930891249438325, guid: e23dd98132a134f308b9829f103dd42d, type: 3}
+  _shootingCooldown: 1
+  _shootingForce: 50
+  _projectilePrefab: {fileID: 2382930891249438325, guid: e23dd98132a134f308b9829f103dd42d, type: 3}
   _isEnemy: 0
 --- !u!114 &4713690074317954445
 MonoBehaviour:

@@ -5,8 +5,9 @@ using UnityEngine;
 public class RangeAttackController : MonoBehaviour {
 
     [SerializeField] private float _maxRange = 50f;
-    [SerializeField] private float _shotCooldown = 2f;
-    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private float _shootingCooldown = 2f;
+    [SerializeField] private float _shootingForce = 10f;
+    [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private bool _isEnemy;
 
     private GameObject nearestEnemy = null;
@@ -15,48 +16,55 @@ public class RangeAttackController : MonoBehaviour {
 
 
     private void Start() {
-        _currentShotCooldown = _shotCooldown;
+        _currentShotCooldown = _shootingCooldown;
     }
 
     private void Update() {
+
+        // Find nearest enemy
         
         if (_isEnemy) {
             nearestEnemy = GameObject.FindObjectsOfType<Turret>()
                 .Where(enemy => !enemy.IsDead && Vector3.Distance(transform.position, enemy.transform.position) <= _maxRange)
                 .Select(enemy => enemy.gameObject)
                 .FirstOrDefault();
-        }
-        else
-        {
+        } else {
             nearestEnemy = GameObject.FindObjectsOfType<Enemy>()
                 .Where(enemy =>
                     !enemy.IsDead && Vector3.Distance(transform.position, enemy.transform.position) <= _maxRange)
                 .Select(enemy => enemy.gameObject)
                 .FirstOrDefault();
-            if (nearestEnemy != null)
-            {
-                Quaternion lookRotation = Quaternion.LookRotation(nearestEnemy.transform.position - transform.position);
-                Vector3 rotation = Quaternion.Lerp(this.transform.rotation, lookRotation, Time.deltaTime * 10f).eulerAngles;
-                this.transform.rotation = Quaternion.Euler (0f, rotation.y, 0f);
-            }
+        }
+
+        // Look towards the enemy
+            
+        if (nearestEnemy != null) {
+            Quaternion lookRotation = Quaternion.LookRotation(nearestEnemy.transform.position - transform.position);
+            Vector3 rotation = Quaternion.Lerp(this.transform.rotation, lookRotation, Time.deltaTime * 10f).eulerAngles;
+            this.transform.rotation = Quaternion.Euler (0f, rotation.y, 0f);
         }
         
         if (_currentShotCooldown >= 0)
             _currentShotCooldown -= Time.deltaTime;
-        else
-        {
-
+        else {
             if (nearestEnemy == null)
                 return;
+
+            // Instantiate the projectile and set its target
             
             Transform muzzle = gameObject.transform.Find("Muzzle");
             if (muzzle == null)
                 muzzle = transform;
-            var bullet = Instantiate(_bulletPrefab, muzzle.position + Vector3.forward, muzzle.rotation);
-            bullet.GetComponent<IBullet>().SetTarget(nearestEnemy);
+
+            var projectile = Instantiate(_projectilePrefab, muzzle.position + Vector3.forward, muzzle.rotation);
+        
+            projectile.GetComponent<IProjectile>().SetTarget(nearestEnemy);
+
+            // Notify of attack performed event
+
             EventManager.instance.Attack(this.gameObject);
             
-            _currentShotCooldown = _shotCooldown;
+            _currentShotCooldown = _shootingCooldown;
         }
     }
 

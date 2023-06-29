@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PoisonBullet : Bullet
 {
-    [SerializeField] private float _poisonDamage;
-    [SerializeField] private int _numTimes;
-    [SerializeField] private float _repeatInterval;
+    [SerializeField] private float _poisonDamage = 1f;
+    [SerializeField] private int _numTimes = 10;
+    [SerializeField] private float _repeatInterval = 1f;
     public new void OnTriggerEnter(Collider collider) {
         
         if(collider.gameObject != _target)
