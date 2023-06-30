@@ -14,7 +14,8 @@ public class Bullet : Projectile {
         Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
         transform.rotation = rotation;
 
-        Debug.DrawRay(transform.position, dir, Color.red, 10);
+        bool enemyTarget = _target.GetComponent<Enemy>() != null;
+        Debug.DrawRay(transform.position, dir, enemyTarget ? Color.green : Color.red, 10);
 
         GetComponent<Rigidbody>().AddForce(_shootingForce * dir.normalized, ForceMode.VelocityChange);
     }

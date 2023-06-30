@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3194196c87a47fb5a9b34de0bf485081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxRange: 20
+  _maxRange: 15
   _shootingCooldown: 2
   _projectilePrefab: {fileID: 2382930891249438325, guid: a869c5625672613168c5efdb0d7679b6, type: 3}
   _isEnemy: 1

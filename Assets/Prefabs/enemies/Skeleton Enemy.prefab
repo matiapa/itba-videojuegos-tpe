@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736730247318615967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.42, z: 0.037}
+  m_LocalPosition: {x: 0, y: 1, z: 0.037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7330370045535168655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.42, z: 0.86}
+  m_LocalPosition: {x: 0, y: 1.02, z: 0.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -235,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3433600713801151140, guid: 2e1d0dab735a65b5a8e1107cf07166ee, type: 3}
       propertyPath: m_Name
-      value: Skeleton Enemy 1
+      value: Skeleton Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3433600713801151140, guid: 2e1d0dab735a65b5a8e1107cf07166ee, type: 3}
       propertyPath: m_Layer
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3194196c87a47fb5a9b34de0bf485081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxRange: 30
+  _maxRange: 15
   _shootingCooldown: 1
   _projectilePrefab: {fileID: 2382930891249438325, guid: a869c5625672613168c5efdb0d7679b6, type: 3}
   _isEnemy: 1

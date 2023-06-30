@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
     [SerializeField] private int _initialLives;
     [SerializeField] private int _initialCoins;
+    [SerializeField] private float _timeScale = 1;
     
     private int _lives;
     private int _coins;
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour {
     private void Awake() {
         if (instance != null) Destroy(this);
         instance = this;
+
+        Time.timeScale = _timeScale;
     }
 
     private void Start() {
