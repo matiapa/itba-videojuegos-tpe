@@ -33,7 +33,7 @@ public class PathFollowerController : MonoBehaviour, ISlowable {
 
 		GetComponent<Rigidbody>().AddForce(_currentSpeed * dir.normalized, ForceMode.VelocityChange);
 
-		if (Vector3.Distance(transform.position, _points[_pathIndex].position) <= 0.4f)
+		if (Vector3.Distance(transform.position, _points[_pathIndex].position) <= 1f)
 			_pathIndex++;
 	}
 
