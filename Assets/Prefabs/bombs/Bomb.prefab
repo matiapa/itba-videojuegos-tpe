@@ -125,6 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 50
-  _force: 750
-  _damage: 50
+  _force: 1000
+  _damage: 25
   explosion: {fileID: 6634417062159081707, guid: b0f64252ccb792043a29229e9822a5f0, type: 3}

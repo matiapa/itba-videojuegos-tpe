@@ -62,10 +62,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2131e95dca1ce399bea61beeb9608d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage: 20
   _lifetime: 5
   _impactEffect: {fileID: 0}
-  _shootingForce: 100
+  _initialSpeed: 50
   _poisonDamage: 10
   _numTimes: 5
   _repeatInterval: 1
