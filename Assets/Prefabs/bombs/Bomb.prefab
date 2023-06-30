@@ -127,4 +127,4 @@ MonoBehaviour:
   _radius: 50
   _force: 750
   _damage: 50
-  explosion: {fileID: 8797965736938917801, guid: b0f64252ccb792043a29229e9822a5f0, type: 3}
+  explosion: {fileID: 6634417062159081707, guid: b0f64252ccb792043a29229e9822a5f0, type: 3}
