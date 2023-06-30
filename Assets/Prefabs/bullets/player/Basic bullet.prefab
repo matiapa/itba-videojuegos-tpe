@@ -140,7 +140,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2382930891249438325}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -162,6 +162,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _lifetime: 5
-  _collidingForce: 0
   _impactEffect: {fileID: 0}
-  _shootingForce: 50
+  _shootingForce: 100

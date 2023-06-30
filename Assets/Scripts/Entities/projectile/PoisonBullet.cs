@@ -25,6 +25,6 @@ public class PoisonBullet : Bullet
             CommandQueue.instance.AddEvent(new CmdApplyDamage(damageable, _poisonDamage));
             yield return new WaitForSeconds(_repeatInterval);
         }
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, _numTimes * _repeatInterval);
     }
 }

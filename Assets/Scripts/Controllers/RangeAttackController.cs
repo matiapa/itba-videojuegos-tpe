@@ -33,14 +33,14 @@ public class RangeAttackController : MonoBehaviour {
                     !enemy.IsDead && Vector3.Distance(transform.position, enemy.transform.position) <= _maxRange)
                 .Select(enemy => enemy.gameObject)
                 .FirstOrDefault();
-        }
 
-        // Look towards the enemy
+            // Look towards the enemy
             
-        if (nearestEnemy != null) {
-            Quaternion lookRotation = Quaternion.LookRotation(nearestEnemy.transform.position - transform.position);
-            Vector3 rotation = Quaternion.Lerp(this.transform.rotation, lookRotation, Time.deltaTime * 10f).eulerAngles;
-            this.transform.rotation = Quaternion.Euler (0f, rotation.y, 0f);
+            if (nearestEnemy != null) {
+                Quaternion lookRotation = Quaternion.LookRotation(nearestEnemy.transform.position - transform.position);
+                Vector3 rotation = Quaternion.Lerp(this.transform.rotation, lookRotation, Time.deltaTime * 10f).eulerAngles;
+                this.transform.rotation = Quaternion.Euler (0f, rotation.y, 0f);
+            }
         }
         
         if (_currentShotCooldown >= 0)

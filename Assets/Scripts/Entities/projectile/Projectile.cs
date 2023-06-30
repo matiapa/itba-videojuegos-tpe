@@ -4,7 +4,6 @@ public class Projectile : MonoBehaviour, IProjectile
 {
     [SerializeField] private float _damage = 10f;
     [SerializeField] private float _lifetime = 5f;
-    [SerializeField] private float _collidingForce = 5f;
     [SerializeField] private GameObject _impactEffect;
 
     protected GameObject _target;
@@ -23,13 +22,6 @@ public class Projectile : MonoBehaviour, IProjectile
         IDamageable damagable = collision.gameObject.GetComponent<IDamageable>();
         if (damagable != null) {
             CommandQueue.instance.AddEvent(new CmdApplyDamage(damagable, _damage));
-        }
-
-        Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
-        if (rb != null) {
-            Vector3 dir = _target.transform.position - transform.position;
-            dir.y = 0;  // It would throw characters underground otherwise!
-            rb.AddForce(_collidingForce * dir.normalized, ForceMode.Impulse);
         }
 
         if (_impactEffect != null) {
