@@ -5722,6 +5722,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2698344720660375401, guid: f75566dddb044d8c9828ff51c6f6b013, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445115934938160784, guid: f75566dddb044d8c9828ff51c6f6b013, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5752515117076591678, guid: f75566dddb044d8c9828ff51c6f6b013, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f75566dddb044d8c9828ff51c6f6b013, type: 3}
 --- !u!1001 &254771886

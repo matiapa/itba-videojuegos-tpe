@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1663552632089314087}
   - component: {fileID: 1453022045343346532}
   - component: {fileID: 2968481878483026992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Skeleton Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125775978319820136}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Target muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9201382142156824504}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Origin muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
