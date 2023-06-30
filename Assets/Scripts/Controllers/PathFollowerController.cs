@@ -1,7 +1,6 @@
 using UnityEngine;
 public class PathFollowerController : MonoBehaviour, ISlowable {
-	[SerializeField] private float speed = 10f;
-	[SerializeField] private float rotationSpeed = 5f;
+	[SerializeField] private float speed = 0.4f;
 	[SerializeField] private GameObject pathContainer;
 
 	private Transform[] _points;
@@ -16,16 +15,16 @@ public class PathFollowerController : MonoBehaviour, ISlowable {
 		_currentSpeed = speed;
 	}
 
-	void Update() {
+	void FixedUpdate() {
 		if (_points == null || _pathIndex == _points.Length)
 			return;
 
 		Vector3 dir = _points[_pathIndex].position - transform.position;
-		
-		Quaternion targetRotation = Quaternion.LookRotation(dir);
-		transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-		transform.Translate(dir.normalized * _currentSpeed * Time.deltaTime, Space.World);
+		Quaternion targetRotation = Quaternion.LookRotation(dir);
+		transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+
+		GetComponent<Rigidbody>().AddForce(speed * dir.normalized, ForceMode.VelocityChange);
 
 		if (Vector3.Distance(transform.position, _points[_pathIndex].position) <= 0.4f)
 			_pathIndex++;

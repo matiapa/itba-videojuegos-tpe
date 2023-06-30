@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3443495783039029582}
   - component: {fileID: -638120381427735657}
   - component: {fileID: -2313975330794232827}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Poison bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 4417144320595330163}
   - component: {fileID: 6523623634850541230}
   - component: {fileID: 55857971797390704}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -51,11 +51,11 @@ public class RangeAttackController : MonoBehaviour {
 
             // Instantiate the projectile and set its target
             
-            Transform muzzle = gameObject.transform.Find("Muzzle");
-            if (muzzle == null)
-                muzzle = transform;
+            Transform originMuzzle = gameObject.transform.Find("Origin muzzle");
+            if (originMuzzle == null)
+                originMuzzle = transform;
 
-            var projectile = Instantiate(_projectilePrefab, muzzle.position + Vector3.forward, muzzle.rotation);
+            var projectile = Instantiate(_projectilePrefab, originMuzzle.position, originMuzzle.rotation);
         
             projectile.GetComponent<IProjectile>().SetTarget(nearestEnemy);
 

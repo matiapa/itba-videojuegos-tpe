@@ -10,7 +10,5 @@ public interface IProjectile {
     
     GameObject Target { get; }
 
-    void OnTriggerEnter(Collider collider);
-
     void SetTarget(GameObject target);
 }

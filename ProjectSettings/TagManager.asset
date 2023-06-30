@@ -12,11 +12,11 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Projectiles
+  - Player entities
+  - Enemy entities
+  - Player bullets
+  - Enemy bullets
   - Structures
-  - 
-  - 
-  - 
   - 
   - 
   - 

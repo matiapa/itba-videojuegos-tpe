@@ -14,16 +14,18 @@ public class Projectile : MonoBehaviour, IProjectile
     public GameObject ImpactEffect => _impactEffect;
     public GameObject Target => _target;
 
-    public void OnTriggerEnter(Collider collider) {
-        if(collider.gameObject != _target)
+    protected virtual void OnCollisionEnter(Collision collision) {        
+        if(collision.gameObject != _target) {
+            Destroy(this.gameObject);
             return;
-        
-        IDamageable damagable = collider.gameObject.GetComponent<IDamageable>();
+        }
+            
+        IDamageable damagable = collision.gameObject.GetComponent<IDamageable>();
         if (damagable != null) {
             CommandQueue.instance.AddEvent(new CmdApplyDamage(damagable, _damage));
         }
 
-        Rigidbody rb = collider.gameObject.GetComponent<Rigidbody>();
+        Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
         if (rb != null) {
             Vector3 dir = _target.transform.position - transform.position;
             dir.y = 0;  // It would throw characters underground otherwise!

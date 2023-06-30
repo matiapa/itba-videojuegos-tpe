@@ -8,8 +8,8 @@ public class Bomb : MonoBehaviour {
     [SerializeField] private float _force = 10f;
     [SerializeField] private float _damage = 10f;
 
-    public void OnTriggerEnter(Collider collider) {
-        if (! collider.GetComponent<Enemy>())
+    public void OnCollisionEnter(Collision collision) {
+        if (! collision.gameObject.GetComponent<Enemy>())
             return;
 
         GameObject[] nearEnemies = GameObject.FindObjectsOfType<Enemy>()
@@ -26,7 +26,6 @@ public class Bomb : MonoBehaviour {
             Rigidbody rb = enemy.GetComponent<Rigidbody>();
             if (rb != null) {
                 rb.AddExplosionForce(_force, transform.position, _radius, 3.0F, ForceMode.Impulse);
-                print("Pushed");
             }
         }
 

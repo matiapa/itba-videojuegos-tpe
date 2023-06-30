@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2302252051129413691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1238017904982082609}
+  m_Layer: 6
+  m_Name: Target muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1238017904982082609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302252051129413691}
+  m_LocalRotation: {x: 0.00000001535789, y: -0.71149117, z: 0.000000015550134, w: 0.7026951}
+  m_LocalPosition: {x: 0.06, y: 4.94, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8840173886090382455}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5925578482532602824
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,8 +40,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8207558966011232187}
-  m_Layer: 0
-  m_Name: Muzzle
+  m_Layer: 6
+  m_Name: Origin muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,9 +69,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8840173886090382455}
     m_Modifications:
+    - target: {fileID: 2558675665117965943, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2558675667213612298, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
       propertyPath: m_Name
       value: SpriteRendererMicroBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558675667213612298, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2558675667213612299, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
       propertyPath: m_RootOrder
@@ -94,6 +133,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3529093047236065145, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859353100412354668, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
 --- !u!114 &8520157473538301641 stripped
@@ -114,9 +161,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 130282, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 134706, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 137822, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
       propertyPath: m_Name
       value: Basic turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 165880, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 171538, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 182368, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 189574, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 196596, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 471166, guid: f4f6b630159e6b34386dec2579f250b2, type: 3}
       propertyPath: m_RootOrder
@@ -182,7 +261,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8840173886090755057}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7, y: 10, z: 5}
@@ -297,7 +376,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxRange: 30
   _shootingCooldown: 1
-  _shootingForce: 50
   _projectilePrefab: {fileID: 2382930891249438325, guid: e23dd98132a134f308b9829f103dd42d, type: 3}
   _isEnemy: 0
 --- !u!114 &4713690074317954445

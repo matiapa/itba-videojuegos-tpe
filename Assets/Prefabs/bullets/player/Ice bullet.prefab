@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6296306451586070046}
   - component: {fileID: 294626256098926141}
   - component: {fileID: 593646460609376272}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 3443495783039029582}
   - component: {fileID: -6626936455701083653}
   - component: {fileID: 1265168847695597842}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Ice bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1441421911474269933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,9 +38,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7037168033965124676, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037168033965165296, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037168033965170332, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037168033965185230, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037168033965191002, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037168033965192232, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037168033965199036, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7037168033965201238, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
       propertyPath: m_Name
       value: Ice turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037168033965201238, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7037168033965498576, guid: 02432cf30fd81634e80e89ae8f4bebec, type: 3}
       propertyPath: m_RootOrder
@@ -221,7 +253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxRange: 20
   _shootingCooldown: 2
-  _shootingForce: 10
   _projectilePrefab: {fileID: 2382930891249438325, guid: 796e1d750db1c569f9e97ceb8de3383c, type: 3}
   _isEnemy: 0
 --- !u!114 &3040051363688288445
@@ -273,9 +304,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7938165697145458170}
     m_Modifications:
+    - target: {fileID: 2558675665117965943, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2558675667213612298, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
       propertyPath: m_Name
       value: SpriteRendererMicroBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558675667213612298, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2558675667213612299, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
       propertyPath: m_RootOrder
@@ -324,6 +363,14 @@ PrefabInstance:
     - target: {fileID: 2558675667213612299, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529093047236065145, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859353100412354668, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c6e67c472921b442a89b9253a82aced, type: 3}
