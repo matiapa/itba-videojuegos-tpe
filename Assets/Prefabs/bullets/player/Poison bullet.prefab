@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 10
   _lifetime: 10
-  _collidingForce: 5
+  _collidingForce: 0
   _impactEffect: {fileID: 0}
   _shootingForce: 100
   _poisonDamage: 5

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PathFollowerController))]
@@ -15,6 +17,7 @@ public class Enemy : MonoBehaviour {
     private BasicLifeController _basicLifeController;
     private RangeAttackController _rangeAttackController;
     private AudioSource _audioSource;
+    private Animator _animator;
     
     public bool IsDead => _basicLifeController.IsDead;
 
@@ -28,6 +31,7 @@ public class Enemy : MonoBehaviour {
         _rangeAttackController.SetIsEnemy(true);
 
         _audioSource = GetComponent<AudioSource>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update() {
@@ -41,16 +45,11 @@ public class Enemy : MonoBehaviour {
         EventManager.instance.CoinChange(_coinsEarnedOnDeath);
 
         _audioSource.PlayOneShot(_deathSound.AudioClip);
-        // TODO: animacion de muerte
-        this._rangeAttackController.enabled = false;
-        this.transform.position = new Vector3(this.transform.position.x, -200, transform.position.z);
-        Invoke("DestroyEnemy", 5f);
-    }
+        _animator.SetTrigger("Die");
 
-    private void DestroyEnemy() {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 0.8f);
     }
-
+    
     public void SetPath(GameObject _pathContainer) {
        _pathFollowerController.SetPath(_pathContainer);
     }
