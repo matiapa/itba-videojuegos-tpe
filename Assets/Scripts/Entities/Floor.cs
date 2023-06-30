@@ -6,8 +6,7 @@ public class Floor : MonoBehaviour, IBuildHolder {
 
     public GameObject Building => _building;
 
-    public bool PlaceBuild(GameObject buildable)
-    {
+    public bool PlaceBuild(GameObject buildable) {
         if (_building != null)
             return false;
         
@@ -15,6 +14,13 @@ public class Floor : MonoBehaviour, IBuildHolder {
         _building = buildable;
 
         return true;
+    }
+
+    public bool Allows(GameObject buildable) {
+        if (buildable.GetComponent<Bomb>())
+            return true;
+        else
+            return false;
     }
     
 }

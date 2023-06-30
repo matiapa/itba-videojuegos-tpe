@@ -23,8 +23,9 @@ public class BasicLifeController : MonoBehaviour, IDamageable {
             _hpBar.Initialize(_maxLife);
     }
 
-    public void TakeDamage(float damage)
-    {
+    public void TakeDamage(float damage) {
+        print("Damage");
+        
         if (_currentLife <= 0)
             return;
         

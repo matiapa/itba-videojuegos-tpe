@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 
-public class Node : MonoBehaviour, IBuildHolder
-{
+public class Node : MonoBehaviour, IBuildHolder {
     private GameObject _building;
 
     public GameObject Building => _building;
 
-    public bool PlaceBuild(GameObject buildable)
-    {
+    public bool PlaceBuild(GameObject buildable) {
         if (_building != null)
             return false;
         
@@ -17,5 +15,11 @@ public class Node : MonoBehaviour, IBuildHolder
         return true;
     }
     
+    public bool Allows(GameObject buildable) {
+        if (buildable.GetComponent<Turret>())
+            return true;
+        else
+            return false;
+    }
     
 }

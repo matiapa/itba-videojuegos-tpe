@@ -15,7 +15,7 @@ public class Bullet : Projectile {
         transform.rotation = rotation;
 
         bool enemyTarget = _target.GetComponent<Enemy>() != null;
-        Debug.DrawRay(transform.position, dir, enemyTarget ? Color.green : Color.red, 10);
+        Debug.DrawRay(transform.position, dir, enemyTarget ? Color.green : Color.red, 1);
 
         GetComponent<Rigidbody>().AddForce(_shootingForce * dir.normalized, ForceMode.VelocityChange);
     }

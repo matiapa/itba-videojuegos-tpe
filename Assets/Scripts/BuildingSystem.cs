@@ -34,7 +34,9 @@ public class BuildingSystem : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 2000)) {
             IBuildHolder buildHolder = hit.transform.gameObject.GetComponent<IBuildHolder>();
-            if (buildHolder != null)
+            GameObject objectToBuild = entities[index];
+
+            if (buildHolder != null && buildHolder.Allows(objectToBuild))
                 actualPos = hit.transform.gameObject.transform.position;
             else
                 actualPos = Vector3.zero + new Vector3(0,-10,0);

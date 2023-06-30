@@ -7,6 +7,7 @@ public class PoisonBullet : Bullet
     [SerializeField] private int _numTimes = 10;
     [SerializeField] private float _repeatInterval = 1f;
 
+
     protected override void OnCollisionEnter(Collision collision) {
         if(collision.gameObject != _target)
             return;
