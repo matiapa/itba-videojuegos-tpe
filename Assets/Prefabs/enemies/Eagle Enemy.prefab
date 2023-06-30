@@ -492,6 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.4
   pathContainer: {fileID: 0}
+  repetitions: 0
 --- !u!114 &8528516242944178023
 MonoBehaviour:
   m_ObjectHideFlags: 0
