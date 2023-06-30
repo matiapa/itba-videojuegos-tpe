@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private GameObject _basicTurretTextMesh;
     [SerializeField] private GameObject _iceTurretTextMesh;
     [SerializeField] private GameObject _poisonTurretTextMesh;
+    [SerializeField] private GameObject _missileTurretTextMesh;
+    [SerializeField] private GameObject _bombTextMesh;
     private int[] _turretsCost;
 
     private void Start() {
@@ -20,6 +22,8 @@ public class UIManager : MonoBehaviour {
         _basicTurretTextMesh.GetComponent<TextMeshProUGUI>().text = $"{_turretsCost[0]}";
         _iceTurretTextMesh.GetComponent<TextMeshProUGUI>().text = $"{_turretsCost[1]}";
         _poisonTurretTextMesh.GetComponent<TextMeshProUGUI>().text = $"{_turretsCost[2]}";
+        _missileTurretTextMesh.GetComponent<TextMeshProUGUI>().text = $"{_turretsCost[3]}";
+        _bombTextMesh.GetComponent<TextMeshProUGUI>().text = $"{_turretsCost[4]}";
         
         UpdateCoinsValue(GameManager.instance.Coins);
         UpdateLivesValue(GameManager.instance.Lives);

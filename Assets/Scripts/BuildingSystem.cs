@@ -92,7 +92,7 @@ public class BuildingSystem : MonoBehaviour
         }
     }
 
-    private void SelectEntity(int index) {
+    public void SelectEntity(int index) {
         this.index = index;
 
         if(pendingEntity != null)
