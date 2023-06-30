@@ -7,6 +7,7 @@ public class Bomb : MonoBehaviour {
     [SerializeField] private float _radius = 30f;
     [SerializeField] private float _force = 10f;
     [SerializeField] private float _damage = 10f;
+    public GameObject explosion;
 
     public void OnCollisionEnter(Collision collision) {
         if (! collision.gameObject.GetComponent<Enemy>())
@@ -29,6 +30,9 @@ public class Bomb : MonoBehaviour {
             }
         }
 
+        if (explosion != null)
+            Instantiate(explosion, transform.position, Quaternion.identity);
+        
         Destroy(this.gameObject);
     }
 
