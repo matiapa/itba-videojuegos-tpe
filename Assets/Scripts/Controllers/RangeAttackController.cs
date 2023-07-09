@@ -15,7 +15,7 @@ public class RangeAttackController : MonoBehaviour {
 
 
     private void Start() {
-        _currentShotCooldown = _shootingCooldown;
+        _currentShotCooldown = 0;
     }
 
     private void Update() {

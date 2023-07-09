@@ -1,0 +1,32 @@
+global:
+    ADD: 35
+    earning: 0.2
+
+enemies:
+    skeleton:
+        health: 100
+        speed: 10
+    orc:
+        health: 125
+        speed: 12.5
+    eagle:
+        health: 156
+        speed: 15.6
+
+towers:
+    basic:
+        bullet_damage: 20
+        shooting_rate: 1
+        cost: 10
+    ice:
+        bullet_damage: 25
+        shooting_rate: 1
+        cost: 12.5
+    poison:
+        bullet_damage: 25
+        shooting_rate: 1
+        cost: 12.5
+    missile:
+        bullet_damage: 31.2
+        shooting_rate: 1
+        cost: 15.6

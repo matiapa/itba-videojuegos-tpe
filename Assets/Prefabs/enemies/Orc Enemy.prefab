@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c4ed995829b4509c8611e2496d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8.5
   pathContainer: {fileID: 0}
   repetitions: 0
 --- !u!114 &1907256706104464086
@@ -625,6 +625,18 @@ MonoBehaviour:
   _shootingCooldown: 2
   _projectilePrefab: {fileID: 2382930891249438325, guid: a869c5625672613168c5efdb0d7679b6, type: 3}
   _isEnemy: 1
+--- !u!114 &3701855341383620247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150022640300115318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75fd69e7025046fadb3de28e057d0090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4609291197971171494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72508166f5cd189cb9d53446f5ef158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 150
+  _maxLife: 100
   _hpBar: {fileID: 7588689301580026527}
 --- !u!114 &8812023836843086378
 MonoBehaviour:
@@ -654,18 +666,6 @@ MonoBehaviour:
   _coinsEarnedOnDeath: 2
   _livesRemovedOnArrival: 2
   _deathSound: {fileID: 11400000, guid: e947dee45157b2ab3a45a7512de4c677, type: 2}
---- !u!114 &3701855341383620247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6150022640300115318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75fd69e7025046fadb3de28e057d0090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6150022640300383626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413006, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
