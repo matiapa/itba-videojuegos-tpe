@@ -49,6 +49,7 @@ public class WaveManager : MonoBehaviour {
         public int count;
         public float rate;
         public int countdown;
+        public bool enabled;
         
         public float Duration {
             get { return count / rate; }

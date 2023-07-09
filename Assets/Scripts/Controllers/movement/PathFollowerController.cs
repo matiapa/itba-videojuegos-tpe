@@ -1,19 +1,23 @@
 using UnityEngine;
+
 public class PathFollowerController : MonoBehaviour, ISlowable {
 	[SerializeField] private float speed = 0.4f;
 	[SerializeField] private GameObject pathContainer;
-
 	[SerializeField] private int repetitions = 1;
 
 	private Transform[] _points;
 	private int _pathIndex = 0;
 	private float _currentSpeed;
+	private IMovable _movementController;
 
 	public bool endReached => repetitions == 0 && _pathIndex == _points.Length;
 
-	void Start() {
+    void Awake() {
+        _movementController = GetComponent<IMovable>();
+
 		if (pathContainer)
 			SetPath(pathContainer);
+		
 		_currentSpeed = speed;
 	}
 
@@ -28,10 +32,7 @@ public class PathFollowerController : MonoBehaviour, ISlowable {
 
 		Vector3 dir = _points[_pathIndex].position - transform.position;
 
-		Quaternion targetRotation = Quaternion.LookRotation(dir);
-		transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
-
-		GetComponent<Rigidbody>().AddForce(_currentSpeed * dir.normalized, ForceMode.VelocityChange);
+		_movementController.move(dir, _currentSpeed);
 
 		if (Vector3.Distance(transform.position, _points[_pathIndex].position) <= 1f)
 			_pathIndex++;

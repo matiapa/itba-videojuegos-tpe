@@ -5,36 +5,18 @@ public class Missile : Projectile {
     [SerializeField] private float _speed = 30f;
 
     void FixedUpdate() {
-        if (_target == null) {
-            Destroy(gameObject);
-            return;
-        }
-
         Transform targetMuzzle = _target.transform.Find("Target muzzle");
         if (targetMuzzle == null)
             targetMuzzle = _target.transform;
 
         Vector3 dir = targetMuzzle.position - transform.position;
 
-        Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
-        transform.rotation = rotation;
+        bool enemyTarget = _target.GetComponent<Enemy>() != null;
+        Debug.DrawRay(transform.position, dir, enemyTarget ? Color.green : Color.red, 1);
 
-        Debug.DrawRay(transform.position, dir, Color.green, 1);
-        
-        GetComponent<Rigidbody>().AddForce(_speed * dir.normalized, ForceMode.VelocityChange);
+        if (dir.magnitude > 1)
+	        _movementController.move(dir, _speed);
+        else if (dir.magnitude > 0)
+            _movementController.move(dir, 1 / Time.deltaTime); 
     }
-
-    // protected override void Update() {
-    //     Vector3 dir = _target.transform.position - transform.position;
-
-    //     Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
-    //     transform.rotation = rotation;
-        
-    //     if (dir.magnitude > 1)
-	//         transform.Translate(dir.normalized * _speed * Time.deltaTime, Space.World);
-    //     else if (dir.magnitude > 0)
-    //         transform.Translate(dir, Space.World);
-
-    //     base.Update();
-    // }
 }

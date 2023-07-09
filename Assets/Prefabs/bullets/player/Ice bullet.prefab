@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 3443495783039029582}
   - component: {fileID: -6626936455701083653}
   - component: {fileID: 1265168847695597842}
+  - component: {fileID: -2022276286435364347}
   m_Layer: 8
   m_Name: Ice bullet
   m_TagString: Untagged
@@ -166,3 +167,15 @@ MonoBehaviour:
   _initialSpeed: 50
   _slowRate: 0.5
   _slowDuration: 5
+--- !u!114 &-2022276286435364347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382930891249438325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b258b02135e615a5fb63cb6aeb62af03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
