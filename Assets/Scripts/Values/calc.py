@@ -7,7 +7,7 @@ values = yaml.load(fi, Loader=SafeLoader)
 out = {}
 
 ADD = values['global']['ADD']
-earning = values['global']['earning']
+kills_to_recover = values['global']['kills_to_recover']
 
 for enemy_name in values['enemies']:
     enemy = values['enemies'][enemy_name]
@@ -24,9 +24,9 @@ for enemy_name in values['enemies']:
     akc /= len(values['towers'])
 
     for tower_name in values['towers']:
-        towers[tower_name]['earning'] = round(akc * earning, 2)
+        towers[tower_name]['earning'] = round(akc / kills_to_recover, 2)
 
-    killing_reward = round(akc * (1 + earning), 2)
+    killing_reward = round(akc / kills_to_recover, 2)
 
     out[enemy_name] = {'reward': killing_reward, 'towers': towers}
 

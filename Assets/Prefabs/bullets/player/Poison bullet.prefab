@@ -67,8 +67,8 @@ MonoBehaviour:
   _lifetime: 5
   _impactEffect: {fileID: 0}
   _initialSpeed: 50
-  _poisonDamage: 10
-  _numTimes: 5
+  _poisonDamage: 5
+  _numTimes: 1
   _repeatInterval: 1
 --- !u!114 &-6202571088393210334
 MonoBehaviour:

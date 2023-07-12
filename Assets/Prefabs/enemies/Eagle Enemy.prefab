@@ -473,8 +473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d23788588feac98ac693b2192a6a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinsEarnedOnDeath: 1
-  _livesRemovedOnArrival: 2
+  _coinsEarnedOnDeath: 17
+  _livesRemovedOnArrival: 1
   _deathSound: {fileID: 11400000, guid: fb6afb135c5461b0d992a5430f64f83e, type: 2}
 --- !u!114 &669220873463173260
 MonoBehaviour:
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72508166f5cd189cb9d53446f5ef158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 25
+  _maxLife: 156
   _hpBar: {fileID: 3438730281577398004}
 --- !u!114 &6977246025943755545
 MonoBehaviour:
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c4ed995829b4509c8611e2496d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15.6
   pathContainer: {fileID: 0}
   repetitions: 0
 --- !u!114 &7753818905336272198

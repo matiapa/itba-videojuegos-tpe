@@ -1,57 +1,57 @@
 eagle:
-  reward: 41.72
+  reward: 17.38
   towers:
     basic:
       cost: 34.77
-      earning: 6.95
+      earning: 17.38
       needed: 3.48
     ice:
       cost: 34.77
-      earning: 6.95
+      earning: 17.38
       needed: 2.78
     missile:
       cost: 34.77
-      earning: 6.95
+      earning: 17.38
       needed: 2.23
     poison:
       cost: 34.77
-      earning: 6.95
+      earning: 17.38
       needed: 2.78
 orc:
-  reward: 26.79
+  reward: 11.16
   towers:
     basic:
       cost: 22.32
-      earning: 4.46
+      earning: 11.16
       needed: 2.23
     ice:
       cost: 22.32
-      earning: 4.46
+      earning: 11.16
       needed: 1.79
     missile:
       cost: 22.32
-      earning: 4.46
+      earning: 11.16
       needed: 1.43
     poison:
       cost: 22.32
-      earning: 4.46
+      earning: 11.16
       needed: 1.79
 skeleton:
-  reward: 17.14
+  reward: 7.14
   towers:
     basic:
       cost: 14.29
-      earning: 2.86
+      earning: 7.14
       needed: 1.43
     ice:
       cost: 14.29
-      earning: 2.86
+      earning: 7.14
       needed: 1.14
     missile:
       cost: 14.29
-      earning: 2.86
+      earning: 7.14
       needed: 0.92
     poison:
       cost: 14.29
-      earning: 2.86
+      earning: 7.14
       needed: 1.14

@@ -1,6 +1,6 @@
 global:
     ADD: 35
-    earning: 0.2
+    kills_to_recover: 2
 
 enemies:
     skeleton:

@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c4ed995829b4509c8611e2496d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8.5
+  speed: 12.5
   pathContainer: {fileID: 0}
   repetitions: 0
 --- !u!114 &1907256706104464086
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72508166f5cd189cb9d53446f5ef158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 100
+  _maxLife: 125
   _hpBar: {fileID: 7588689301580026527}
 --- !u!114 &8812023836843086378
 MonoBehaviour:
@@ -663,8 +663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d23788588feac98ac693b2192a6a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinsEarnedOnDeath: 2
-  _livesRemovedOnArrival: 2
+  _coinsEarnedOnDeath: 11
+  _livesRemovedOnArrival: 1
   _deathSound: {fileID: 11400000, guid: e947dee45157b2ab3a45a7512de4c677, type: 2}
 --- !u!4 &6150022640300383626 stripped
 Transform:
