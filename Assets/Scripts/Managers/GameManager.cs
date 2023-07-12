@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     private int _lives;
     private int _coins;
     private WaveManager _waveManager;
-
+    
     public event Action<int> OnNetCoinChange;
     public event Action<int> OnNetLivesChange;
 
@@ -19,7 +19,12 @@ public class GameManager : MonoBehaviour {
     public int Coins => _coins;
 
     public int CurrentWave => _waveManager.CurrentWave;
-    public int MaxWave => _waveManager.MaxWave;
+    public int MaxWave => _waveManager.TotalWaves;
+    public int CurrentEnemies => _waveManager.CurrentEnemies;
+    public int TotalEnemies => _waveManager.TotalEnemies;
+    public float AvgEnemyLifetime => _waveManager.AvgEnemyLifetime;
+    public float AvgTurretLifetime => _waveManager.AvgTurretLifetime;
+
     static public GameManager instance;
 
     private void Awake() {
@@ -41,7 +46,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (_waveManager.LastWave && GameObject.FindObjectsOfType<Enemy>().Length == 0)
+        if (_waveManager.CurrentWave == _waveManager.TotalWaves && _waveManager.CurrentEnemies == 0)
             EventManager.instance.GameOver(true);
     }
 
@@ -65,5 +70,12 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene("VictoryScene");
         else
             SceneManager.LoadScene("DefeatScene");
+    }
+
+    public void PauseGame(bool pause) {
+        if (pause)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = _timeScale;
     }
 }

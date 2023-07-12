@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour {
     public FillingLifeController FillingLifeController => _fillingLifeController;
     
     private AudioSource _audioSource;
+    private float _lifetime = 0;
 
     [SerializeField] private SoundStats _canonShot;
     [SerializeField] private SoundStats _deathSound;
@@ -33,6 +34,10 @@ public class Turret : MonoBehaviour {
         EventManager.instance.OnAttack += OnAttack;
     }
 
+    void Update() {
+        _lifetime += Time.deltaTime;
+    }
+
     void OnAttack(GameObject attacker) {
         if (attacker == this.gameObject)
             _audioSource.PlayOneShot(_canonShot.AudioClip);
@@ -40,10 +45,16 @@ public class Turret : MonoBehaviour {
     
     private void OnDeath() {
         EventManager.instance.OnAttack -= OnAttack; 
+        EventManager.instance.TowerDestroyed(_lifetime);
+
         _audioSource.PlayOneShot(_deathSound.AudioClip);
+        
         // TODO: animacion de destruccion
+
         _rangeAttackController.enabled = false;
+
         transform.position = new Vector3(transform.position.x, -200, transform.position.z);
+
         Invoke("DestroyTurret", 2f);
     }
 

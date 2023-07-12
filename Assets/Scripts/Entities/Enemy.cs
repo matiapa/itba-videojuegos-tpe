@@ -10,7 +10,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     [SerializeField] private int _coinsEarnedOnDeath;
-    [SerializeField] private int _livesRemovedOnArrival;
+    [SerializeField] private int _livesRemovedOnArrival;    
     [SerializeField] private SoundStats _deathSound;
 
     private PathFollowerController _pathFollowerController;
@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour {
     private RangeAttackController _rangeAttackController;
     private AudioSource _audioSource;
     private Animator _animator;
+    private float _lifetime = 0;
     
     public bool IsDead => _basicLifeController.IsDead;
 
@@ -39,9 +40,12 @@ public class Enemy : MonoBehaviour {
             EventManager.instance.LivesChange(-_livesRemovedOnArrival);
             Destroy(gameObject);
         }
+
+        _lifetime += Time.deltaTime;
     }
 
     private void OnDeath() {
+        EventManager.instance.EnemyDeath(_lifetime);
         EventManager.instance.CoinChange(_coinsEarnedOnDeath);
 
         _audioSource.PlayOneShot(_deathSound.AudioClip);
