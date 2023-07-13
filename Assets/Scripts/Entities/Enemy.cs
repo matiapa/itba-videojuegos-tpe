@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] private int _coinsEarnedOnDeath;
     [SerializeField] private int _livesRemovedOnArrival;    
     [SerializeField] private SoundStats _deathSound;
+    [SerializeField] private SoundStats _roarSound;
 
     private PathFollowerController _pathFollowerController;
     private BasicLifeController _basicLifeController;
@@ -35,6 +37,12 @@ public class Enemy : MonoBehaviour {
         _animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        if(_roarSound != null)
+            _audioSource.PlayOneShot(_roarSound.AudioClip);
+    }
+
     void Update() {
         if (_pathFollowerController.endReached) {
             EventManager.instance.LivesChange(-_livesRemovedOnArrival);
@@ -44,14 +52,16 @@ public class Enemy : MonoBehaviour {
         _lifetime += Time.deltaTime;
     }
 
-    private void OnDeath() {
+    private void OnDeath()
+    {
+        _pathFollowerController.enabled = false;
         EventManager.instance.EnemyDeath(_lifetime);
         EventManager.instance.CoinChange(_coinsEarnedOnDeath);
 
         _audioSource.PlayOneShot(_deathSound.AudioClip);
         _animator.SetTrigger("Die");
 
-        Destroy(this.gameObject, 0.8f);
+        Destroy(this.gameObject, 2f);
     }
     
     public void SetPath(GameObject _pathContainer) {

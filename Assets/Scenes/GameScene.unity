@@ -6190,42 +6190,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - enemy: {fileID: 2236775908914838221, guid: 207ccad66bf714041bffdea368916013, type: 3}
+    path: {fileID: 0}
+    count: 5
+    rate: 0.25
+    countdown: 0
+    enabled: 0
   - enemy: {fileID: 2698344720660375401, guid: f75566dddb044d8c9828ff51c6f6b013, type: 3}
-    path: {fileID: 1617389762}
-    count: 10
+    path: {fileID: 0}
+    count: 1
+    rate: 0.25
+    countdown: 0
+    enabled: 0
+  - enemy: {fileID: 9213937827136464783, guid: 884e21776c995df2491c1868a0198181, type: 3}
+    path: {fileID: 0}
+    count: 1
     rate: 0.25
     countdown: 0
     enabled: 0
   - enemy: {fileID: 6150022640300115318, guid: 4603df95496d8fee48eea9a1c5d0f87e, type: 3}
-    path: {fileID: 1617389762}
-    count: 7
+    path: {fileID: 0}
+    count: 1
     rate: 0.25
-    countdown: 10
-    enabled: 0
-  - enemy: {fileID: 9213937827136464783, guid: 884e21776c995df2491c1868a0198181, type: 3}
-    path: {fileID: 1617389762}
-    count: 5
-    rate: 0.25
-    countdown: 10
-    enabled: 0
-  - enemy: {fileID: 6150022640300115318, guid: 4603df95496d8fee48eea9a1c5d0f87e, type: 3}
-    path: {fileID: 1617389762}
-    count: 20
-    rate: 1
-    countdown: 15
+    countdown: 0
     enabled: 0
   - enemy: {fileID: 2698344720660375401, guid: f75566dddb044d8c9828ff51c6f6b013, type: 3}
-    path: {fileID: 1617389762}
-    count: 16
+    path: {fileID: 0}
+    count: 1
+    rate: 0.25
+    countdown: 0
+    enabled: 0
+  - enemy: {fileID: 6700207024252614480, guid: b5c3ddb2c86592c4a9ca4b8f0f2723e9, type: 3}
+    path: {fileID: 0}
+    count: 1
     rate: 1
     countdown: 10
     enabled: 0
-  - enemy: {fileID: 9213937827136464783, guid: 884e21776c995df2491c1868a0198181, type: 3}
-    path: {fileID: 1617389762}
-    count: 15
-    rate: 1
-    countdown: 15
-    enabled: 0
+  paths:
+  - {fileID: 1617389762}
+  - {fileID: 2105223216}
+  - {fileID: 569900944}
+  - {fileID: 569900944}
+  - {fileID: 2105223216}
+  KilledEnemies: 0
 --- !u!114 &264791412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6349,6 +6356,7 @@ MonoBehaviour:
   _initialLives: 15
   _initialCoins: 30
   _timeScale: 1
+  _audioClip: {fileID: 8300000, guid: 5354087ab203f4e4182c8590b5c0cb51, type: 3}
 --- !u!114 &264791415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30460,7 +30468,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343535894}
-  m_LocalRotation: {x: 0.28538343, y: 0.012180056, z: -0.0036271322, w: 0.9583292}
+  m_LocalRotation: {x: 0.28538343, y: 0.012180024, z: -0.0036271217, w: 0.9583292}
   m_LocalPosition: {x: 82.10004, y: 54, z: -292.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40488,7 +40496,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777817493}
-  m_LocalRotation: {x: 0.28538343, y: 0.012180056, z: -0.0036271322, w: 0.9583292}
+  m_LocalRotation: {x: 0.28538343, y: 0.012180024, z: -0.0036271217, w: 0.9583292}
   m_LocalPosition: {x: 82.10004, y: 54, z: -292.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 153010, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 153408, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -391,15 +395,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 413006, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 413006, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 413006, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 413006, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
       propertyPath: m_LocalPosition.x
@@ -441,6 +445,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 413006, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
 --- !u!1 &6150022640300115318 stripped
@@ -459,7 +467,7 @@ Rigidbody:
   m_Mass: 50
   m_Drag: 3
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
@@ -586,7 +594,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e0d7cf8ff5c591c4dbb21f1579254056, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -609,6 +617,18 @@ MonoBehaviour:
   speed: 12.5
   pathContainer: {fileID: 0}
   repetitions: 0
+--- !u!114 &1163493169472194662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150022640300115318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75fd69e7025046fadb3de28e057d0090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1907256706104464086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,18 +645,6 @@ MonoBehaviour:
   _shootingCooldown: 2
   _projectilePrefab: {fileID: 2382930891249438325, guid: a869c5625672613168c5efdb0d7679b6, type: 3}
   _isEnemy: 1
---- !u!114 &3701855341383620247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6150022640300115318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75fd69e7025046fadb3de28e057d0090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4609291197971171494
 MonoBehaviour:
   m_ObjectHideFlags: 0

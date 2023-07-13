@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -8,8 +9,8 @@ public class Bomb : MonoBehaviour {
     [SerializeField] private float _force = 10f;
     [SerializeField] private float _damage = 10f;
     public GameObject explosion;
-
-    public void OnCollisionEnter(Collision collision) {
+    
+    public void OnTriggerEnter(Collider collision) {
         if (! collision.gameObject.GetComponent<Enemy>())
             return;
 
@@ -35,5 +36,7 @@ public class Bomb : MonoBehaviour {
         
         Destroy(this.gameObject);
     }
+    
+    
 
 }

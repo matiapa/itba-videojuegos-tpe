@@ -17,6 +17,8 @@ public class EventManager : MonoBehaviour {
     public event Action<float> OnTowerDestroyed;
     public event Action<GameObject> OnAttack;
 
+    public event Action OnBossWave;
+
     public void GameOver(bool isVictory)  {
         if (OnGameOver != null) OnGameOver(isVictory);
     }
@@ -43,5 +45,10 @@ public class EventManager : MonoBehaviour {
 
     public void Attack(GameObject attacker) {
         if (OnAttack != null) OnAttack(attacker);
+    }
+
+    public void BossWave()
+    {
+        if (OnBossWave != null) OnBossWave();
     }
 }

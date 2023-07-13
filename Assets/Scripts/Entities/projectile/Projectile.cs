@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(IMovable))]
@@ -18,8 +19,9 @@ public class Projectile : MonoBehaviour, IProjectile {
         _movementController = GetComponent<IMovable>();
 	}
 
-    protected virtual void OnCollisionEnter(Collision collision) {        
-        if(collision.gameObject != _target) {
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject != _target) {
             Destroy(this.gameObject);
             return;
         }
@@ -45,8 +47,11 @@ public class Projectile : MonoBehaviour, IProjectile {
     }
 
     protected virtual void Update() {
-        if(_target == null)
+        if (_target == null)
+        {
             Destroy(this.gameObject);
+            return;
+        }
 
         _lifetime -= Time.deltaTime;
         if (_lifetime <= 0) {

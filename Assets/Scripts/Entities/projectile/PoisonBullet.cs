@@ -8,7 +8,7 @@ public class PoisonBullet : Bullet
     [SerializeField] private float _repeatInterval = 1f;
 
 
-    protected override void OnCollisionEnter(Collision collision) {
+    protected override void OnTriggerEnter(Collider collision) {
         if(collision.gameObject != _target)
             return;
         
@@ -17,7 +17,7 @@ public class PoisonBullet : Bullet
             StartCoroutine(CreateCmdApplyDamage(damageable));
         } 
 
-        base.OnCollisionEnter(collision);
+        base.OnTriggerEnter(collision);
     }
     
     IEnumerator CreateCmdApplyDamage (IDamageable damageable) {

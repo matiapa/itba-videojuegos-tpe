@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
     private int _lives;
     private int _coins;
     private WaveManager _waveManager;
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
     
     public event Action<int> OnNetCoinChange;
     public event Action<int> OnNetLivesChange;
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour {
     private void Awake() {
         if (instance != null) Destroy(this);
         instance = this;
-
+        _audioSource = GetComponent<AudioSource>();
         Time.timeScale = _timeScale;
     }
 
@@ -40,13 +42,13 @@ public class GameManager : MonoBehaviour {
         EventManager.instance.OnCoinChange += OnCoinChange;
         EventManager.instance.OnLivesChange += OnLivesChange;
         EventManager.instance.OnGameOver += OnGameOver;
-
+        EventManager.instance.OnBossWave += OnBossWave;
         _lives = _initialLives;
         _coins = _initialCoins;
     }
 
     private void Update() {
-        if (_waveManager.CurrentWave == _waveManager.TotalWaves && _waveManager.CurrentEnemies == 0)
+        if (_waveManager.TotalEnemies == _waveManager.KilledEnemies)
             EventManager.instance.GameOver(true);
     }
 
@@ -78,4 +80,10 @@ public class GameManager : MonoBehaviour {
         else
             Time.timeScale = _timeScale;
     }
+    
+    void OnBossWave() {
+        _audioSource.Stop();
+        _audioSource.PlayOneShot(_audioClip);
+    }
+
 }
