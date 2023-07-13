@@ -15,6 +15,8 @@ public class WaveManager : MonoBehaviour {
     private bool bossSound = true;
 
     public int CurrentWave => _waveIndex + 1;
+
+    public Wave WaveInfo => waves[_waveIndex];
     public int TotalWaves => waves.Length;
     
     public int KilledEnemies = 0;
@@ -57,8 +59,8 @@ public class WaveManager : MonoBehaviour {
     }    
     
     IEnumerator SpawnWave () {
-        EventManager.instance.WaveChange(_waveIndex+1, waves.Length);
         Wave wave = waves[_waveIndex];
+        EventManager.instance.WaveChange(_waveIndex+1, waves.Length, WaveInfo);
 
         for (int i = 0; i < wave.count; i++) {
             GameObject enemyObj = Instantiate(wave.enemy, transform.position, transform.rotation);
@@ -96,6 +98,39 @@ public class WaveManager : MonoBehaviour {
         
         public float Duration {
             get { return count / rate; }
+        }
+
+        public float EnemyHp
+        {
+            get {
+                if(enemy.GetComponent<Enemy>().GetBasicLifeController() != null)
+                 return enemy.GetComponent<Enemy>().GetBasicLifeController().MaxLife;
+                return 0;
+            }
+        }
+        
+        public float EnemySpeed
+        {
+            get { 
+                if(enemy.GetComponent<Enemy>().GetPathFollowerController() != null)
+                    return enemy.GetComponent<Enemy>().GetPathFollowerController().Speed;
+                return 0;
+            }
+        }
+
+        public int Countdown
+        {
+            get { return countdown; }
+        }
+
+        public int Count
+        {
+            get { return count; }
+        }
+
+        public string EnemyName
+        {
+            get { return enemy.GetComponent<Enemy>().Name; }
         }
     }
 

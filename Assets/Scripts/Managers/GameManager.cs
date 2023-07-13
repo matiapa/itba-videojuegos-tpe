@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
     public int Coins => _coins;
 
     public int CurrentWave => _waveManager.CurrentWave;
+
+    public WaveManager.Wave CurrentWaveInfo => _waveManager.WaveInfo;
     public int MaxWave => _waveManager.TotalWaves;
     public int CurrentEnemies => _waveManager.CurrentEnemies;
     public int TotalEnemies => _waveManager.TotalEnemies;
@@ -34,11 +36,10 @@ public class GameManager : MonoBehaviour {
         instance = this;
         _audioSource = GetComponent<AudioSource>();
         Time.timeScale = _timeScale;
+        _waveManager = GetComponent<WaveManager>();
     }
 
     private void Start() {
-        _waveManager = GetComponent<WaveManager>();
-
         EventManager.instance.OnCoinChange += OnCoinChange;
         EventManager.instance.OnLivesChange += OnLivesChange;
         EventManager.instance.OnGameOver += OnGameOver;

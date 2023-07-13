@@ -323,6 +323,7 @@ MonoBehaviour:
   _livesRemovedOnArrival: 2
   _deathSound: {fileID: 11400000, guid: 98336b3a31230c842ac34332eb07627a, type: 2}
   _roarSound: {fileID: 11400000, guid: 9d85b481e165ef045a4427e2ff3d5afe, type: 2}
+  Name: Trolls
 --- !u!114 &453390965
 MonoBehaviour:
   m_ObjectHideFlags: 0

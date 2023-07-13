@@ -14,14 +14,15 @@ public class Enemy : MonoBehaviour {
     [SerializeField] private int _livesRemovedOnArrival;    
     [SerializeField] private SoundStats _deathSound;
     [SerializeField] private SoundStats _roarSound;
-
+    public string Name;
     private PathFollowerController _pathFollowerController;
     private BasicLifeController _basicLifeController;
     private RangeAttackController _rangeAttackController;
     private AudioSource _audioSource;
     private Animator _animator;
     private float _lifetime = 0;
-    
+
+
     public bool IsDead => _basicLifeController.IsDead;
 
     void Awake() {
@@ -66,5 +67,15 @@ public class Enemy : MonoBehaviour {
     
     public void SetPath(GameObject _pathContainer) {
        _pathFollowerController.SetPath(_pathContainer);
+    }
+    
+    public PathFollowerController GetPathFollowerController()
+    {
+        return GetComponent<PathFollowerController>();
+    }
+
+    public BasicLifeController GetBasicLifeController()
+    {
+        return  GetComponent<BasicLifeController>();
     }
 }

@@ -238,6 +238,8 @@ MonoBehaviour:
   _coinsEarnedOnDeath: 2
   _livesRemovedOnArrival: 2
   _deathSound: {fileID: 11400000, guid: 97026d5956ed4bbad93ccf3aed50938f, type: 2}
+  _roarSound: {fileID: 0}
+  Name: Skeletons
 --- !u!114 &3095174055063615751
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,10 +1,17 @@
 using TMPro;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour {
     [SerializeField] private GameObject _coinsTextMesh;
     [SerializeField] private GameObject _livesTextMesh;
+    [SerializeField] private GameObject _timerTextMesh;
+    [SerializeField] private GameObject _currentEnemyHpTextMesh;
+    [SerializeField] private GameObject _currentEnemySpeedTextMesh;
+    [SerializeField] private GameObject _currentEnemyCountTextMesh;
+    [SerializeField] private GameObject _currentEnemyNameTextMesh;
+    [SerializeField] private GameObject _currentEnemyImageTextMesh;
     
     [SerializeField] private GameObject _waveTextMesh;
     [SerializeField] private GameObject _enemiesTextMesh;
@@ -37,7 +44,7 @@ public class UIManager : MonoBehaviour {
         
         UpdateCoinsValue(GameManager.instance.Coins);
         UpdateLivesValue(GameManager.instance.Lives);
-        UpdateCurrentWave(GameManager.instance.CurrentWave, GameManager.instance.MaxWave);
+        UpdateCurrentWave(GameManager.instance.CurrentWave, GameManager.instance.MaxWave, GameManager.instance.CurrentWaveInfo);
     }
 
     private void Update() {
@@ -64,12 +71,31 @@ public class UIManager : MonoBehaviour {
             _livesTextMesh.GetComponent<TextMeshProUGUI>().text = $"{newLives}";
     }
 
-    private void UpdateCurrentWave(int currentWave, int maxWave) {
+    private void UpdateCurrentWave(int currentWave, int maxWave, WaveManager.Wave waveInfo) {
         //if(currentWave != 1)
           //  DisplayWaveEndStats();
 
         if (_waveTextMesh != null)
             _waveTextMesh.GetComponent<TextMeshProUGUI>().text = $"{currentWave} / {maxWave}";
+
+        if (waveInfo != null)
+        {
+            if (_currentEnemyHpTextMesh != null)
+                _currentEnemyHpTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.EnemyHp}";
+        
+            if (_currentEnemySpeedTextMesh != null)
+                _currentEnemySpeedTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.EnemySpeed}";
+        
+            if (_currentEnemyCountTextMesh != null)
+                _currentEnemyCountTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.Count}";
+        
+            if (_currentEnemyNameTextMesh != null)
+                _currentEnemyNameTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.EnemyName}";
+        
+            if(_timerTextMesh != null)
+                _timerTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.Countdown}";
+        }
+        
     }
 
      private void UpdateCurrentEnemies(float lifetime) {

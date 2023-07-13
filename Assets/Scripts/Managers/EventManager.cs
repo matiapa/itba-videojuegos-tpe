@@ -12,7 +12,7 @@ public class EventManager : MonoBehaviour {
     public event Action<bool> OnGameOver;
     public event Action<int> OnLivesChange;
     public event Action<int> OnCoinChange;
-    public event Action<int, int> OnWaveChange;
+    public event Action<int, int, WaveManager.Wave> OnWaveChange;
     public event Action<float> OnEnemyDeath;
     public event Action<float> OnTowerDestroyed;
     public event Action<GameObject> OnAttack;
@@ -31,8 +31,8 @@ public class EventManager : MonoBehaviour {
         if (OnCoinChange != null) OnCoinChange(coinChange);
     }
 
-    public void WaveChange(int currentWave, int maxWave) {
-        if (OnWaveChange != null) OnWaveChange(currentWave, maxWave);
+    public void WaveChange(int currentWave, int maxWave, WaveManager.Wave waveInfo) {
+        if (OnWaveChange != null) OnWaveChange(currentWave, maxWave, waveInfo);
     }
 
     public void EnemyDeath(float lifetime) {

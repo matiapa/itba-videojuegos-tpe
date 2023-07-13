@@ -55,4 +55,6 @@ public class PathFollowerController : MonoBehaviour, ISlowable {
 	private void ResetSpeed() {
 		_currentSpeed = speed;
 	}
+
+	public float Speed => speed;
 }

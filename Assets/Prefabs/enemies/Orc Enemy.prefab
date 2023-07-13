@@ -674,6 +674,8 @@ MonoBehaviour:
   _coinsEarnedOnDeath: 11
   _livesRemovedOnArrival: 1
   _deathSound: {fileID: 11400000, guid: e947dee45157b2ab3a45a7512de4c677, type: 2}
+  _roarSound: {fileID: 0}
+  Name: Orcs
 --- !u!4 &6150022640300383626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413006, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
