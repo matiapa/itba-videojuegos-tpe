@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour {
     }
 
     private void Update() {
+        /*
         if (_showingMenu && Input.GetButtonUp("Accept")) {
             print("Hiding menu");
             GameObject menu = GameObject.Find("End wave stats");
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour {
 
             _showingMenu = false;
         }
+        */
     }
 
     private void UpdateCoinsValue(int newCoins) {
@@ -63,8 +65,8 @@ public class UIManager : MonoBehaviour {
     }
 
     private void UpdateCurrentWave(int currentWave, int maxWave) {
-        if(currentWave != 1)
-            DisplayWaveEndStats();
+        //if(currentWave != 1)
+          //  DisplayWaveEndStats();
 
         if (_waveTextMesh != null)
             _waveTextMesh.GetComponent<TextMeshProUGUI>().text = $"{currentWave} / {maxWave}";
