@@ -1,17 +1,29 @@
 global:
     ADD: 35
-    kills_to_recover: 2
+    kills_to_recover: 8
 
 enemies:
-    skeleton:
-        health: 100
-        speed: 10
-    orc:
-        health: 125
+    skeleton1:
+        health: 150
         speed: 12.5
+    orc:
+        health: 225
+        speed: 10
     eagle:
-        health: 156
+        health: 100
         speed: 15.6
+    skeleton2:
+        health: 200
+        speed: 12.5
+    orc2:
+        health: 400
+        speed: 8
+    eagle2:
+        health: 200
+        speed: 17
+    troll:
+        health: 3000
+        speed: 4
 
 towers:
     basic:
@@ -27,6 +39,6 @@ towers:
         shooting_rate: 1
         cost: 12.5
     missile:
-        bullet_damage: 31.2
+        bullet_damage: 30
         shooting_rate: 1
         cost: 15.6

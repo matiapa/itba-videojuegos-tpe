@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxRange: 40
-  _shootingCooldown: 1
+  _shootingCooldown: 3
   _projectilePrefab: {fileID: 2382930891249438325, guid: 16ea138b9ffc214e4812f66c9e2cfa80, type: 3}
   _isEnemy: 0
 --- !u!114 &4713690074317954445
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac6f66eae73b209aa4e93a7e8e83700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 500
+  _maxLife: 200
   _hpBar: {fileID: 8520157473538301641}
   _fillRate: 0.2
 --- !u!114 &6006332686976587359
@@ -427,4 +427,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac9350352724452847c0e2caa0b7d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 15
+  _cost: 35

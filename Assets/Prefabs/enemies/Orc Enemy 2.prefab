@@ -279,7 +279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 153010, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
       propertyPath: m_Name
-      value: Orc Enemy
+      value: Orc Enemy 2
       objectReference: {fileID: 0}
     - target: {fileID: 153010, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
       propertyPath: m_Layer
@@ -449,6 +449,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13712474, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19d8a3003b5d1254493825b88c995172, type: 2}
+    - target: {fileID: 13712474, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: d9a6717f8c183624bae00c597a62f85a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}
 --- !u!1 &6150022640300115318 stripped
@@ -614,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c4ed995829b4509c8611e2496d8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6
   pathContainer: {fileID: 0}
   repetitions: 0
 --- !u!114 &1163493169472194662
@@ -643,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxRange: 25
   _shootingCooldown: 2
-  _projectilePrefab: {fileID: 2382930891249438325, guid: dfb1d32aa6873984eb76d0f38684d02d, type: 3}
+  _projectilePrefab: {fileID: 2382930891249438325, guid: ab21924fd1d02e2488c76a5d8cb895f8, type: 3}
   _isEnemy: 1
 --- !u!114 &4609291197971171494
 MonoBehaviour:
@@ -657,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72508166f5cd189cb9d53446f5ef158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 140
+  _maxLife: 400
   _hpBar: {fileID: 7588689301580026527}
 --- !u!114 &8812023836843086378
 MonoBehaviour:
@@ -671,11 +679,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d23788588feac98ac693b2192a6a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinsEarnedOnDeath: 3
-  _livesRemovedOnArrival: 2
+  _coinsEarnedOnDeath: 10
+  _livesRemovedOnArrival: 3
   _deathSound: {fileID: 11400000, guid: e947dee45157b2ab3a45a7512de4c677, type: 2}
   _roarSound: {fileID: 0}
-  Name: Orc
+  Name: Berserker
 --- !u!4 &6150022640300383626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413006, guid: 80afb8f52d27bae4f8ff4cf083945861, type: 3}

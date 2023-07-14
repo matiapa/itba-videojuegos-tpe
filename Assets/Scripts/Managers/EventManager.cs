@@ -52,6 +52,7 @@ public class EventManager : MonoBehaviour {
     public void BossWave()
     {
         if (OnBossWave != null) OnBossWave();
+        CoinChange(50);
     }
 
     public void TimerChanged(int countdown)

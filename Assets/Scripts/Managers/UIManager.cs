@@ -106,18 +106,20 @@ public class UIManager : MonoBehaviour {
                 switch (waveInfo.EnemyName)
                 {
                     case "Orc":
+                    case "Berserker":
                         _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Orc");
                         break;
-                        
                     case "Eagle":
+                    case "Great Eagle":
                         _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Eagle");
                         break;
                         
-                    case "Troll":
+                    case "Deathlord":
                         _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Troll");
                         break;
                         
                     case "Skeleton":
+                    case "Skeleton Lord":
                         _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Skeleton");
                         break;
                         

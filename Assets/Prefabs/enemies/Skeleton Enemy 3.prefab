@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_Name
-      value: Skeleton Enemy 2
+      value: Skeleton Enemy 3
       objectReference: {fileID: 0}
     - target: {fileID: 1349150361055734, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_Layer
@@ -25,15 +25,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.90000004
       objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.90000004
       objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.90000004
       objectReference: {fileID: 0}
     - target: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79,18 +79,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 23571910707953038, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23571910707953038, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b142bbb1bf45a9d43bcdf62a35454169, type: 2}
-    - target: {fileID: 23571910707953038, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: b142bbb1bf45a9d43bcdf62a35454169, type: 2}
     - target: {fileID: 95690985424869934, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
       propertyPath: m_Controller
       value: 
@@ -99,18 +87,6 @@ PrefabInstance:
       propertyPath: m_CullingMode
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 137112428768987920, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 137112428768987920, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b142bbb1bf45a9d43bcdf62a35454169, type: 2}
-    - target: {fileID: 137112428768987920, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: b142bbb1bf45a9d43bcdf62a35454169, type: 2}
     m_RemovedComponents:
     - {fileID: 114242563573807930, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
@@ -135,6 +111,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &7750627532421252668
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236775908914838221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.755371, y: 7.162793, z: 1.3638475}
+  m_Center: {x: -0.03282335, y: 3.0813978, z: 0.07962544}
 --- !u!82 &1911598352053228345
 AudioSource:
   m_ObjectHideFlags: 0
@@ -243,9 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3194196c87a47fb5a9b34de0bf485081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxRange: 40
-  _shootingCooldown: 3
-  _projectilePrefab: {fileID: 2382930891249438325, guid: dfb1d32aa6873984eb76d0f38684d02d, type: 3}
+  _maxRange: 35
+  _shootingCooldown: 2
+  _projectilePrefab: {fileID: 2382930891249438325, guid: a869c5625672613168c5efdb0d7679b6, type: 3}
   _isEnemy: 1
 --- !u!114 &1073589144074387037
 MonoBehaviour:
@@ -259,11 +248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d23788588feac98ac693b2192a6a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinsEarnedOnDeath: 3
-  _livesRemovedOnArrival: 2
+  _coinsEarnedOnDeath: 2
+  _livesRemovedOnArrival: 1
   _deathSound: {fileID: 11400000, guid: 97026d5956ed4bbad93ccf3aed50938f, type: 2}
   _roarSound: {fileID: 0}
-  Name: Skeleton Lord
+  Name: Skeleton
 --- !u!114 &3095174055063615751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72508166f5cd189cb9d53446f5ef158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 180
+  _maxLife: 60
   _hpBar: {fileID: 1831892103594530565}
 --- !u!114 &6203714880661049866
 MonoBehaviour:
@@ -305,19 +294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fd69e7025046fadb3de28e057d0090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1376321332259516931
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2236775908914838221}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 6.61337, z: 1}
-  m_Center: {x: 0, y: 2.806685, z: 0}
 --- !u!4 &2242472717007539057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}

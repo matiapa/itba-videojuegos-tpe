@@ -319,11 +319,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d23788588feac98ac693b2192a6a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinsEarnedOnDeath: 2
-  _livesRemovedOnArrival: 2
+  _coinsEarnedOnDeath: 50
+  _livesRemovedOnArrival: 15
   _deathSound: {fileID: 11400000, guid: 98336b3a31230c842ac34332eb07627a, type: 2}
   _roarSound: {fileID: 11400000, guid: 9d85b481e165ef045a4427e2ff3d5afe, type: 2}
-  Name: Troll
+  Name: Deathlord
 --- !u!114 &453390965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,8 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3194196c87a47fb5a9b34de0bf485081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxRange: 50
-  _shootingCooldown: 8
+  _maxRange: 15
+  _shootingCooldown: 6
   _projectilePrefab: {fileID: 2382930891249438325, guid: a76dd544b43544044813b5588d808f48, type: 3}
   _isEnemy: 1
 --- !u!114 &453390966
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72508166f5cd189cb9d53446f5ef158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 200
+  _maxLife: 5000
   _hpBar: {fileID: 7915904804224570507}
 --- !u!114 &453390967
 MonoBehaviour:

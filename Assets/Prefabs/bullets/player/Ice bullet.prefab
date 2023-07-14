@@ -165,7 +165,7 @@ MonoBehaviour:
   _lifetime: 5
   _impactEffect: {fileID: 0}
   _initialSpeed: 50
-  _slowRate: 0.2
+  _slowRate: 0.6
   _slowDuration: 5
 --- !u!114 &-2022276286435364347
 MonoBehaviour:

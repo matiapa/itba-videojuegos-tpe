@@ -892,7 +892,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Defend ye stronghold! \n\nDark forces are approaching our gates, use gold
     to build defense towers on our battlements.\nSlay our enemies to loot more gold.\n\nDefend
-    the stronghold at all costs!\nSurvive 6 enemy waves to claim our victory!"
+    the stronghold at all costs!\nSurvive 7 enemy waves to claim our victory!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
