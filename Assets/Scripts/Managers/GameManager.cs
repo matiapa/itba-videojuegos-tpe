@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 [RequireComponent(typeof(WaveManager))]
 public class GameManager : MonoBehaviour {
@@ -69,10 +70,16 @@ public class GameManager : MonoBehaviour {
     }
 
     private void OnGameOver(bool isVictory) {
-        if (isVictory)
-            SceneManager.LoadScene("VictoryScene");
+        if (isVictory) 
+            StartCoroutine(LoadVictorySceneAfterDelay());
         else
             SceneManager.LoadScene("DefeatScene");
+    }
+
+    private IEnumerator LoadVictorySceneAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("VictoryScene");
     }
 
     public void PauseGame(bool pause) {
