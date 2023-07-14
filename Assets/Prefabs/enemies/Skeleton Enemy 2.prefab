@@ -135,6 +135,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &1376321332259516931
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236775908914838221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6.61337, z: 1}
+  m_Center: {x: 0, y: 2.806685, z: 0}
 --- !u!82 &1911598352053228345
 AudioSource:
   m_ObjectHideFlags: 0
@@ -291,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72508166f5cd189cb9d53446f5ef158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 180
+  _maxLife: 160
   _hpBar: {fileID: 1831892103594530565}
 --- !u!114 &6203714880661049866
 MonoBehaviour:
@@ -305,19 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fd69e7025046fadb3de28e057d0090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &1376321332259516931
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2236775908914838221}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 6.61337, z: 1}
-  m_Center: {x: 0, y: 2.806685, z: 0}
 --- !u!4 &2242472717007539057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4655139138601034, guid: dca8e056b77d49c4aafe4dbcc2bab713, type: 3}
