@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour {
 
@@ -33,6 +34,7 @@ public class WaveManager : MonoBehaviour {
         EventManager.instance.OnEnemyDeath += OnEnemyDeath;
         EventManager.instance.OnLivesChange += OnEnemyVictory;
         EventManager.instance.OnTowerDestroyed += OnTowerDestroyed;
+        EventManager.instance.TimerChanged(Mathf.RoundToInt(_countdown));
     }
 
     void Update () {
@@ -47,10 +49,9 @@ public class WaveManager : MonoBehaviour {
         
         if (_countdown <= 0f) {
             StartCoroutine(SpawnWave());
-            
+
             _countdown = (_waveIndex < waves.Length-1 ? waves[_waveIndex+1].countdown : 0) + waves[_waveIndex].Duration;
             _destroyedTowers = 0;
-
             _waveIndex++;
             return;
         }
@@ -61,6 +62,7 @@ public class WaveManager : MonoBehaviour {
     IEnumerator SpawnWave () {
         Wave wave = waves[_waveIndex];
         EventManager.instance.WaveChange(_waveIndex+1, waves.Length, WaveInfo);
+        EventManager.instance.TimerChanged(Mathf.RoundToInt((_waveIndex < waves.Length-1 ? waves[_waveIndex+1].countdown : 0) + waves[_waveIndex].Duration));
 
         for (int i = 0; i < wave.count; i++) {
             GameObject enemyObj = Instantiate(wave.enemy, transform.position, transform.rotation);

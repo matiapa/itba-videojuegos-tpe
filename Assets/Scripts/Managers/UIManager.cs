@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine.UI;
 
@@ -30,6 +31,11 @@ public class UIManager : MonoBehaviour {
 
     private int[] _turretsCost;
 
+    private void Awake()
+    {
+        EventManager.instance.OnTimerChanged += UpdateTimer;
+    }
+
     private void Start() {
         GameManager.instance.OnNetCoinChange += UpdateCoinsValue;
         GameManager.instance.OnNetLivesChange += UpdateLivesValue;
@@ -46,6 +52,7 @@ public class UIManager : MonoBehaviour {
         UpdateCoinsValue(GameManager.instance.Coins);
         UpdateLivesValue(GameManager.instance.Lives);
         UpdateCurrentWave(GameManager.instance.CurrentWave, GameManager.instance.MaxWave, GameManager.instance.CurrentWaveInfo);
+        UpdateTimer(GameManager.instance.CurrentWaveInfo.countdown);
     }
 
     private void Update() {
@@ -71,6 +78,8 @@ public class UIManager : MonoBehaviour {
         if (_livesTextMesh != null)
             _livesTextMesh.GetComponent<TextMeshProUGUI>().text = $"{newLives}";
     }
+     
+    private Coroutine _timerCoroutine;
 
     private void UpdateCurrentWave(int currentWave, int maxWave, WaveManager.Wave waveInfo) {
         //if(currentWave != 1)
@@ -117,10 +126,7 @@ public class UIManager : MonoBehaviour {
                         break;
                 }
             }
-                
-
-            if(_timerTextMesh != null)
-                _timerTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.Countdown}";
+            
         }
         
     }
@@ -156,5 +162,30 @@ public class UIManager : MonoBehaviour {
 
         float _avgTurretLifetime = GameManager.instance.AvgTurretLifetime;
         _avgTurretLifeTimeTextMesh.GetComponent<TextMeshProUGUI>().text = $"{Math.Round(_avgTurretLifetime, 2)} s";
+    }
+
+    public void UpdateTimer(int countdown)
+    {
+        if(_timerTextMesh != null) {
+            _timerTextMesh.GetComponent<TextMeshProUGUI>().text = $"{countdown}";
+            int seconds = Int32.Parse(_timerTextMesh.GetComponent<TextMeshProUGUI>().text);
+            if (_timerCoroutine != null)
+            {
+                StopCoroutine(_timerCoroutine);
+            }
+            _timerCoroutine = StartCoroutine(UpdateTimerCoroutine(seconds));
+        }
+    }
+    
+    private IEnumerator UpdateTimerCoroutine(int seconds)
+    {
+        while (seconds > 0)
+        {
+            _timerTextMesh.GetComponent<TextMeshProUGUI>().text = $"{seconds}";
+            yield return new WaitForSeconds(1f);
+            seconds--;
+        }
+
+        _timerTextMesh.GetComponent<TextMeshProUGUI>().text = "0";
     }
 }
