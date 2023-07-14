@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
     [SerializeField] private GameObject _coinsTextMesh;
@@ -11,7 +12,7 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private GameObject _currentEnemySpeedTextMesh;
     [SerializeField] private GameObject _currentEnemyCountTextMesh;
     [SerializeField] private GameObject _currentEnemyNameTextMesh;
-    [SerializeField] private GameObject _currentEnemyImageTextMesh;
+    [SerializeField] private GameObject _currentEnemyImage;
     
     [SerializeField] private GameObject _waveTextMesh;
     [SerializeField] private GameObject _enemiesTextMesh;
@@ -89,9 +90,35 @@ public class UIManager : MonoBehaviour {
             if (_currentEnemyCountTextMesh != null)
                 _currentEnemyCountTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.Count}";
         
-            if (_currentEnemyNameTextMesh != null)
+            if (_currentEnemyNameTextMesh != null) 
                 _currentEnemyNameTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.EnemyName}";
-        
+
+            if(_currentEnemyImage != null) {
+                switch (waveInfo.EnemyName)
+                {
+                    case "Orc":
+                        _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Orc");
+                        break;
+                        
+                    case "Eagle":
+                        _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Eagle");
+                        break;
+                        
+                    case "Troll":
+                        _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Troll");
+                        break;
+                        
+                    case "Skeleton":
+                        _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Skeleton");
+                        break;
+                        
+                    default:
+                        _currentEnemyImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Skeleton");
+                        break;
+                }
+            }
+                
+
             if(_timerTextMesh != null)
                 _timerTextMesh.GetComponent<TextMeshProUGUI>().text = $"{waveInfo.Countdown}";
         }

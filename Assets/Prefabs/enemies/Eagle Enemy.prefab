@@ -477,7 +477,7 @@ MonoBehaviour:
   _livesRemovedOnArrival: 1
   _deathSound: {fileID: 11400000, guid: fb6afb135c5461b0d992a5430f64f83e, type: 2}
   _roarSound: {fileID: 0}
-  Name: Eagles
+  Name: Eagle
 --- !u!114 &669220873463173260
 MonoBehaviour:
   m_ObjectHideFlags: 0

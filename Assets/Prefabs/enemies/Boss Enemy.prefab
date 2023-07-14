@@ -323,7 +323,7 @@ MonoBehaviour:
   _livesRemovedOnArrival: 2
   _deathSound: {fileID: 11400000, guid: 98336b3a31230c842ac34332eb07627a, type: 2}
   _roarSound: {fileID: 11400000, guid: 9d85b481e165ef045a4427e2ff3d5afe, type: 2}
-  Name: Trolls
+  Name: Troll
 --- !u!114 &453390965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6700207024252614480}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3194196c87a47fb5a9b34de0bf485081, type: 3}
   m_Name: 
